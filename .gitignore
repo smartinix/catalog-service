@@ -1,0 +1,15 @@
+# IntelliJ
+.idea/
+**___jb_tmp___
+out/
+**.iml
+
+# OS X
+.DS_Store
+
+# Gradle
+build/
+.gradle
+gradle-local.properties
+!gradle-wrapper.jar
+.gradletasknamecache
