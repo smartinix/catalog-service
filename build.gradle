@@ -7,6 +7,14 @@ plugins {
 group = 'com.smartinix'
 version = '0.0.1-SNAPSHOT'
 
+description = 'Provides functionality for managing the books in the catalog.'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 java {
 	sourceCompatibility = '17'
 }
@@ -18,6 +26,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
