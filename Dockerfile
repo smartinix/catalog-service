@@ -1,4 +1,5 @@
-FROM azul/zulu-openjdk-alpine:17-jre
-MAINTAINER smartinix.com
-COPY build/libs/catalog-service-0.0.1-SNAPSHOT.jar /data/catalog-service-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/data/catalog-service-0.0.1-SNAPSHOT.jar"]
+FROM eclipse-temurin:17
+WORKDIR workspace
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} catalog-service.jar
+ENTRYPOINT ["java","-jar","catalog-service.jar"]
