@@ -1,6 +1,5 @@
 package com.smartinix.catalogservice.domain;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -53,7 +52,7 @@ public record Book(
         String publisher
     ) {
         return new Book(
-            null, isbn, title, author, price, publisher,null, null, 0
+            null, isbn, title, author, price, publisher, null, null, 0
         );
     }
 }

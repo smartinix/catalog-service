@@ -1,7 +1,6 @@
 package com.smartinix.catalogservice.web;
 
 import com.smartinix.catalogservice.domain.Book;
-import com.smartinix.catalogservice.domain.BookAlreadyExistsException;
 import com.smartinix.catalogservice.domain.BookService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
