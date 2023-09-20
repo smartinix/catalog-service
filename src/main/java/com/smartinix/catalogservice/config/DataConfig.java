@@ -15,7 +15,8 @@ import java.util.Optional;
 public class DataConfig {
     @Bean
     AuditorAware<String> auditorAware() {
-        return () -> Optional.ofNullable(SecurityContextHolder.getContext())
+        return () -> Optional
+            .ofNullable(SecurityContextHolder.getContext())
             .map(SecurityContext::getAuthentication)
             .filter(Authentication::isAuthenticated)
             .map(Authentication::getName);
