@@ -39,6 +39,13 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/PolarBookshop
 
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+
+info:
+  system: Polar Bookshop
+
 management:
   endpoints:
     web:
@@ -50,13 +57,16 @@ management:
       show-components: always
       probes:
         enabled: true
-
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 polar:
   greeting: Welcome to the local book catalog!
-  testdata:
-    enabled: true
-
-logging:
-  level:
-    org.springframework.security: TRACE
