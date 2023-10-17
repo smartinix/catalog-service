@@ -97,30 +97,30 @@ class CatalogServiceApplicationTests {
             });
     }
 
-//    @Test
-//    void whenPostRequestUnauthenticatedThen401() {
-//        var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
-//
-//        webTestClient
-//            .post()
-//            .uri("/books")
-//            .bodyValue(expectedBook)
-//            .exchange()
-//            .expectStatus().isUnauthorized();
-//    }
+    @Test
+    void whenPostRequestUnauthenticatedThen401() {
+        var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
 
-//    @Test
-//    void whenPostRequestUnauthorizedThen403() {
-//        var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
-//
-//        webTestClient
-//            .post()
-//            .uri("/books")
-//            .headers(headers -> headers.setBearerAuth(bjornTokens.accessToken()))
-//            .bodyValue(expectedBook)
-//            .exchange()
-//            .expectStatus().isForbidden();
-//    }
+        webTestClient
+            .post()
+            .uri("/books")
+            .bodyValue(expectedBook)
+            .exchange()
+            .expectStatus().isUnauthorized();
+    }
+
+    @Test
+    void whenPostRequestUnauthorizedThen403() {
+        var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
+
+        webTestClient
+            .post()
+            .uri("/books")
+            .headers(headers -> headers.setBearerAuth(bjornTokens.accessToken()))
+            .bodyValue(expectedBook)
+            .exchange()
+            .expectStatus().isForbidden();
+    }
 
     @Test
     void whenPutRequestThenBookUpdated() {
